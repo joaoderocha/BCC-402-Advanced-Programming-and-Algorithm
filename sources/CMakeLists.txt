@@ -1,5 +1,5 @@
-add_library(times_two
-        greeter/times_two.h
-        greeter/times_two.cpp
+add_library(greeter
+        greeter/greeter.h
+        greeter/greeter.cpp
         )
-target_include_directories(times_two PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(greeter PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

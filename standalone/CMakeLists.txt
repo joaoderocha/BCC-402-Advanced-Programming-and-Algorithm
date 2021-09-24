@@ -1,4 +1,4 @@
-add_executable(greeter
+add_executable(greeter_main
         main.cpp
-        )
-target_link_libraries(greeter PRIVATE times_two)
+        ../tests/unit_tests/ut_greet.cpp)
+target_link_libraries(greeter_main PRIVATE greeter)

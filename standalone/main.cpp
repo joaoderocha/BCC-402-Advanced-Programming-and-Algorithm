@@ -1,7 +1,7 @@
-#include <greeter/times_two.h>
+#include <greeter/greeter.h>
 #include <iostream>
 
 int main() {
-    std::cout << times_two(5) << std::endl;
+    std::cout << greeter::greet("John") << std::endl;
     return 0;
 }
