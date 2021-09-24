@@ -1,4 +1,4 @@
-#include "times_two.h"
+#include <greeter/times_two.h>
 #include <iostream>
 
 int main() {
