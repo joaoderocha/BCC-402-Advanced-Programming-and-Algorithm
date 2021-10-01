@@ -13,6 +13,27 @@ if (NOT nanobench_FOUND)
     endif()
 endif()
 
+find_package(benchmark QUIET)
+if (NOT benchmark_FOUND)
+    include(FetchContent)
+    FetchContent_Declare(
+            benchmark
+            GIT_REPOSITORY https://github.com/google/benchmark
+            GIT_TAG v1.6.0
+    )
+    FetchContent_GetProperties(benchmark)
+    if (NOT benchmark_POPULATED)
+        FetchContent_Populate(benchmark)
+        # option(BENCHMARK_DOWNLOAD_DEPENDENCIES "Allow the downloading and in-tree building of unmet dependencies" OFF)
+        set(BENCHMARK_DOWNLOAD_DEPENDENCIES ON CACHE BOOL "" FORCE)
+        add_subdirectory(${benchmark_SOURCE_DIR} ${benchmark_BINARY_DIR})
+    endif()
+endif()
+
 add_executable(bench_greet bench_greet.cpp)
 target_link_libraries(bench_greet PRIVATE greeter)
 target_link_libraries(bench_greet PRIVATE nanobench)
+
+add_executable(bench_greet2 bench_greet2.cpp)
+target_link_libraries(bench_greet2 PRIVATE greeter)
+target_link_libraries(bench_greet2 PRIVATE benchmark)
