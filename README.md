@@ -1,4 +1,4 @@
-# Advanced Algorithm Class
+# Advanced Algorithm and Programming Class
 👋
 
 
