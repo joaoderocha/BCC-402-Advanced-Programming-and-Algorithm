@@ -1,2 +1,2 @@
-add_executable(greeter_main main.cpp)
-target_link_libraries(greeter_main PRIVATE greeter)
+add_executable(metaheuristicBib main.cpp)
+target_link_libraries(metaheuristicBib PRIVATE metaheuristic)

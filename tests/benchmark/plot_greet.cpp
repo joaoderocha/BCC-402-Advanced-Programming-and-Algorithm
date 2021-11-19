@@ -2,7 +2,7 @@
 #include <chrono>
 
 #include <matplot/matplot.h>
-#include <greeter/greeter.h>
+//#include <greeter/greeter.h>
 
 int main() {
     using namespace matplot;
@@ -13,9 +13,9 @@ int main() {
         for (size_t i = 0; i < 10000; ++i) {
             std::string str(n, 'x');
             auto start = std::chrono::steady_clock::now();
-            std::string str2 = greeter::greet(str);
+//            std::string str2 = greeter::greet(str);
             auto end = std::chrono::steady_clock::now();
-            std::cout << "n: " << n << " - " << str2 << std::endl;
+//            std::cout << "n: " << n << " - " << str2 << std::endl;
             auto d = end - start;
             sum += d.count();
         }
